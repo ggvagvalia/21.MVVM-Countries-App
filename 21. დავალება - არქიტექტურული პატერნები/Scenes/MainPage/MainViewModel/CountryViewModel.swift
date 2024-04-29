@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 protocol CountryViewModelDelegate: AnyObject {
     func countriesFetched(_ countries: [CountryModel])
@@ -15,11 +14,16 @@ protocol CountryViewModelDelegate: AnyObject {
 
 final class CountryViewModel {
     // MARK: - Properties
-    private var countryModel: [CountryModel] = []
-    //    private let countryService = CountryService.shared
-    var filteredCountries: [CountryModel] = []
     weak var delegate: CountryViewModelDelegate?
+    var countryModel: [CountryModel] = []
+    var filteredCountries: [CountryModel] = []
+    var onFetchImage: ((Data) -> Void)?
+    private var model: CountryModel
     
+    
+    init() {
+        self.model = CountryModel()
+    }
     
     // MARK: - LifeCycle
     func viewDidLoad() {
@@ -29,33 +33,36 @@ final class CountryViewModel {
     // MARK: - GetData
     private func getCountryData() {
         CountryService.shared.fetchCountryData { [weak self] currentCountry in
-            guard let self = self, let country = currentCountry else { return }
+            guard let country = currentCountry else { return }
             DispatchQueue.main.async {
-                self.countryModel = country
-                self.delegate?.countriesFetched(currentCountry!)
+                self?.countryModel = country
+                self?.delegate?.countriesFetched(currentCountry!)
             }
         }
     }
     
-    func fetchCountryData(completion: @escaping ([CountryModel]?) -> Void) {
-        CountryService.shared.fetchCountryData { countryModel in
-            if let countryModel {
-                self.countryModel = countryModel
-                completion(countryModel)
-            }
+    // MARK: - numberOfRaws
+    func numberOfRaws(for searchedText: String) -> Int {
+        let searchBarText = searchedText
+        if let filteredCountries = filteredCountries(for: searchBarText) {
+            return filteredCountries.count
+        } else {
+            return 0
         }
     }
     
-    func allCountries() -> [CountryModel]? {
-        return countryModel
+    // MARK: - cellForRawAt
+    func cellForRaw(with: CustomTableViewCell, at index: IndexPath, with searchBarText: String?) {
+        if let filteredCountries = filteredCountries(for: searchBarText ?? "") {
+            let countriesDetails = filteredCountries[index.row]
+            with.configure(with: countriesDetails)
+        }
     }
-    
     
     // MARK: - IndexPath.Row / SearchBar
-    func didSelectRaw(index: IndexPath, searchBar: UISearchBar) {
+    func didSelectRaw(index: IndexPath) {
         let selectedCountry: CountryModel?
         let countries = self.filteredCountries.isEmpty ? self.countryModel : self.filteredCountries
-        
         if index.row < countries.count {
             selectedCountry = countries[index.row]
         } else {
@@ -72,6 +79,23 @@ final class CountryViewModel {
         
     }
     
+    private func fetchCountryFlag(with countriesDetails: CountryModel) {
+        if let imageUrl = URL(string: countriesDetails.flags?.png ?? "") {
+            URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+                if let data = data {
+                    DispatchQueue.main.async {
+                        self.onFetchImage?(data)
+                    }
+                }
+            }.resume()
+        }
+    }
+    
+    func loadFlag() {
+        fetchCountryFlag(with: model)
+    }
+    
+    // MARK: - FilteredCountries
     func filteredCountries(for searchText: String) -> [CountryModel]? {
         guard !searchText.isEmpty else {
             return countryModel
@@ -79,4 +103,16 @@ final class CountryViewModel {
         return countryModel.filter { $0.name?.common?.localizedCaseInsensitiveContains(searchText) ?? false }
     }
     
+    //    // MARK: - UpdateSearchController
+    public func updateSearchController(for searchBarText: String?) {
+        guard let searchText = searchBarText?.lowercased(), !searchText.isEmpty else {
+            filteredCountries = countryModel
+            return
+        }
+        filteredCountries = countryModel.filter { $0.name?.common?.localizedCaseInsensitiveContains(searchText) ?? false }
+    }
+    
 }
+
+
+

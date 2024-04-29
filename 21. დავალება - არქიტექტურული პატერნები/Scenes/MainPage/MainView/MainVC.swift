@@ -10,18 +10,17 @@ import UIKit
 class MainVC: UIViewController {
     
     // MARK: - Properties
-    var countriesViewModel = CountryViewModel()
-    var countryModel: [CountryModel] = []
-    var filteredResult: [CountryModel] = []
+    var countriesViewModel: CountryViewModel
     let searchBar = UISearchController(searchResultsController: nil)
     let countriesTableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(CustomCell.self, forCellReuseIdentifier: "countriesCell")
+        view.register(CustomTableViewCell.self, forCellReuseIdentifier: "countriesCell")
         view.separatorStyle = .none
         return view
     }()
     
+    // MARK: - Init
     init() {
         self.countriesViewModel = CountryViewModel()
         super.init(nibName: nil, bundle: nil)
@@ -31,7 +30,6 @@ class MainVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +38,7 @@ class MainVC: UIViewController {
         countriesViewModel.delegate = self
         countriesViewModel.viewDidLoad()
         countriesTableView.reloadData()
+//        navigationItem.leftBarButtonItem?.isEnabled = false
     }
     
     // MARK: - SetupUI
@@ -49,9 +48,10 @@ class MainVC: UIViewController {
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.title = "Countries"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.hidesBackButton = true
         countriesTableView.dataSource = self
         countriesTableView.delegate = self
-        
+
         NSLayoutConstraint.activate([
             countriesTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 21),
             countriesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
@@ -60,6 +60,7 @@ class MainVC: UIViewController {
         ])
     }
     
+    // MARK: - SetupSearchBar
     private func setupSearchBar() {
         searchBar.searchResultsUpdater = self
         searchBar.obscuresBackgroundDuringPresentation = false
@@ -69,10 +70,6 @@ class MainVC: UIViewController {
         navigationItem.searchController = searchBar
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
-    }
-    
-    func update(with countryModel: [CountryModel]) {
-        self.countryModel = countryModel
     }
     
 }

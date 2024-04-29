@@ -11,7 +11,7 @@ import SafariServices
 class CountryDetailsView: UIView {
     
     // MARK: - Properties
-    var detailedInfo: CountryModel?
+    private var viewModel: CountryDetailsViewModel
     var openURLHandler: ((URL) -> Void)?
     
     let detailsScrollView: UIScrollView = {
@@ -223,8 +223,10 @@ class CountryDetailsView: UIView {
         return image
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewModel: CountryDetailsViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        viewModel.loadFlag()
         setupUI()
         setupTapGesture()
     }
@@ -235,6 +237,7 @@ class CountryDetailsView: UIView {
     
     func setupUI() {
         backgroundColor = .tertiarySystemBackground
+        loadFlag()
         SetupScrollViewConstraints()
         SetupStackViewConstraints()
         SetupLinksConstraints()
@@ -250,7 +253,6 @@ class CountryDetailsView: UIView {
             detailsScrollView.topAnchor.constraint(equalTo: topAnchor, constant: 41),
             detailsScrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             detailsScrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -140),
-            
         ])
     }
     // MARK: - SetupStackViewConstraints
@@ -260,7 +262,6 @@ class CountryDetailsView: UIView {
         flagContainerView.addSubview(flagImageView)
         detailStackView.addArrangedSubview(aboutFlagLabel)
         detailStackView.addArrangedSubview(flagInfoText)
-        
         detailStackView.addArrangedSubview(thinLine)
         
         detailStackView.addArrangedSubview(basicInfoLabel)
@@ -290,7 +291,6 @@ class CountryDetailsView: UIView {
         detailStackView.addArrangedSubview(thinLine2)
         
         NSLayoutConstraint.activate([
-            
             detailStackView.leadingAnchor.constraint(equalTo: detailsScrollView.leadingAnchor, constant: 0),
             detailStackView.topAnchor.constraint(equalTo: detailsScrollView.topAnchor, constant: 0),
             detailStackView.trailingAnchor.constraint(equalTo: detailsScrollView.trailingAnchor, constant: 0),
@@ -355,33 +355,31 @@ class CountryDetailsView: UIView {
             googleMapsImage.image = UIImage(named: "Group 18-darkMode")
             openStreetMapsImage.image = UIImage(named: "Group 19-darkMode")
             print("darkkk")
-            
         default:
             break
         }
     }
     
-    func update(with detailedInfo: CountryModel) {
-        self.detailedInfo = detailedInfo
-        DispatchQueue.main.async {
-            self.countryNameLabel.text = detailedInfo.name?.official ?? "country name not available"
-            self.flagInfoText.text = detailedInfo.flags?.alt ?? "flag data not available"
-            self.independenceData.text = detailedInfo.independent?.description ?? "Data not available"
-            self.spellingDataLabel.text = detailedInfo.altSpellings?.last ?? "Spelling data not available"
-            self.capitalDataLabel.text = detailedInfo.capital?.first ?? "Capital data not available"
-            self.populationDataLabel.text = String(detailedInfo.population ?? 0)
-            self.regionDataLabel.text = detailedInfo.region ?? "region data not available"
-            self.neighborsDataLabel.text = detailedInfo.borders?.joined(separator: ", ") ?? "neighbors data not available"
-            
-            if let imageUrl = URL(string: detailedInfo.flags?.png ?? "") {
-                URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            let imageBackground = UIImage(data: data)
-                            self.flagImageView.image = imageBackground
-                        }
-                    }
-                }.resume()
+    // MARK: - Update Labels
+    func update() {
+        DispatchQueue.main.async { [self] in
+            self.countryNameLabel.text = viewModel.officialCountryNameTitle
+            self.flagInfoText.text = viewModel.flagsInfo
+            self.independenceData.text = viewModel.independentInfo
+            self.spellingDataLabel.text = viewModel.altSpelling
+            self.capitalDataLabel.text = viewModel.capital
+            self.populationDataLabel.text = viewModel.population
+            self.regionDataLabel.text = viewModel.region
+            self.neighborsDataLabel.text = viewModel.borders
+        }
+    }
+    
+    // MARK: - Load Flag Image
+    func loadFlag() {
+        viewModel.onFetchImage = { [weak self] image in
+            let image = UIImage(data: image)
+            DispatchQueue.main.async {
+                self?.flagImageView.image = image
             }
         }
     }
@@ -396,16 +394,20 @@ class CountryDetailsView: UIView {
         openStreetMapsView.isUserInteractionEnabled = true
     }
     
+    // if let - nooooooo
+    
     @objc private func handleGoogleMapsTapGesture() {
-        guard let urlString = detailedInfo?.maps?.googleMaps,
-              let url = URL(string: urlString) else { return }
-        openURLHandler?(url)
+        if let urlString = viewModel.googleMaps,
+           let url = URL(string: urlString) {
+            openURLHandler?(url)
+        }
     }
     
     @objc private func handleOpenStreetMapsTapGesture() {
-        guard let urlString = detailedInfo?.maps?.openStreetMaps,
-              let url = URL(string: urlString) else { return }
-        openURLHandler?(url)
+        if let urlString = viewModel.openStreetMaps,
+           let url = URL(string: urlString) {
+            openURLHandler?(url)
+        }
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  CustomCell.swift
+//  CustomTableViewCell.swift
 //  21. დავალება - არქიტექტურული პატერნები
 //
 //  Created by gvantsa gvagvalia on 4/25/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCell: UITableViewCell {
+class CustomTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     let containerView: UIView = {
@@ -40,9 +40,7 @@ class CustomCell: UITableViewCell {
         label.textAlignment = .right
         label.textColor = .label
         return label
-    }()
-    private var traitObserver: Any?
-    
+    }()    
     
     // MARK: - LifeCycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

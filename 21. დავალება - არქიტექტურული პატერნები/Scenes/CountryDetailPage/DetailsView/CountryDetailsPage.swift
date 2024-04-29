@@ -11,32 +11,31 @@ import SafariServices
 class CountryDetailsPage: UIViewController {
     
     // MARK: - Properties
-    private var detailedInfo: CountryModel
-    var viewModel: CountryDetailsViewModel?
-    let countryDetailView: CountryDetailsView = {
-        let view = CountryDetailsView()
+    private let viewModel: CountryDetailsViewModel
+    lazy var countryDetailView: CountryDetailsView = {
+        let view = CountryDetailsView(viewModel: viewModel)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    // MARK: - LifeCycle
-    init(detailedInfo: CountryModel) {
-        self.detailedInfo = detailedInfo
+    // MARK: - Init
+    init(viewModel: CountryDetailsViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         countryDetailView.openURLHandler = { [weak self] url in
             self?.openURLInSafari(url)
         }
     }
-    
-    required init?(coder: NSCoder) {
+    required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupUI()
-        GetDetailedInfo(for: detailedInfo)
+        GetDetailedInfo()
     }
     
     // MARK: - SetupUI
@@ -51,12 +50,9 @@ class CountryDetailsPage: UIViewController {
         ])
     }
     
-    //        func GetDetailedInfo(for country: CountryModel) {
-    //            viewModel?.update(with: detailedInfo, view: countryDetailView)
-    //        }
     // MARK: - OpenURLInSafari
-    func GetDetailedInfo(for country: CountryModel) {
-        countryDetailView.update(with: country)
+    func GetDetailedInfo() {
+        countryDetailView.update()
     }
     // MARK: - SetupTapGesture
     private func openURLInSafari(_ url: URL) {

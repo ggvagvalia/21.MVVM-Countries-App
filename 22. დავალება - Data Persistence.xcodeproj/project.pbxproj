@@ -15,7 +15,7 @@
 		9434CADB2BD9830600C2E638 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CADA2BD9830600C2E638 /* CountryModel.swift */; };
 		9434CADD2BD9838B00C2E638 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CADC2BD9838B00C2E638 /* CountryViewModel.swift */; };
 		9434CAE02BD99C0E00C2E638 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CADF2BD99C0E00C2E638 /* CountryService.swift */; };
-		9434CAE92BD9A8D600C2E638 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CAE82BD9A8D600C2E638 /* CustomCell.swift */; };
+		9434CAE92BD9A8D600C2E638 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CAE82BD9A8D600C2E638 /* CustomTableViewCell.swift */; };
 		9434CAEB2BD9A91500C2E638 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CAEA2BD9A91500C2E638 /* CustomImageView.swift */; };
 		9434CAED2BD9A93400C2E638 /* LeftAlignedCustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CAEC2BD9A93400C2E638 /* LeftAlignedCustomLabel.swift */; };
 		9434CAEF2BD9A94F00C2E638 /* RightAlignedCustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CAEE2BD9A94F00C2E638 /* RightAlignedCustomLabel.swift */; };
@@ -25,11 +25,18 @@
 		9434CAF72BD9DE5800C2E638 /* CountryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CAF62BD9DE5800C2E638 /* CountryDetailsView.swift */; };
 		9434CAF92BD9F4F700C2E638 /* CountryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CAF82BD9F4F700C2E638 /* CountryDetailsViewModel.swift */; };
 		9434CAFE2BDA7D0300C2E638 /* MainVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CAFD2BDA7D0300C2E638 /* MainVCExtensions.swift */; };
-		9434CB002BDA7D7B00C2E638 /* CountryViewModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CAFF2BDA7D7B00C2E638 /* CountryViewModelExtensions.swift */; };
+		9475AB1D2BDC921D007BA724 /* LoginVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475AB1C2BDC921D007BA724 /* LoginVCExtensions.swift */; };
+		9475AB1F2BDC94FA007BA724 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475AB1E2BDC94FA007BA724 /* FileManager.swift */; };
+		94F6B3252BDBE83200A3EE50 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6B3242BDBE83200A3EE50 /* LoginVC.swift */; };
+		94F6B3272BDBE8BD00A3EE50 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6B3262BDBE8BD00A3EE50 /* LoginViewModel.swift */; };
+		94F6B3292BDBEF7500A3EE50 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6B3282BDBEF7500A3EE50 /* CustomTextField.swift */; };
+		94F6B32B2BDBF5DA00A3EE50 /* CustomVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6B32A2BDBF5DA00A3EE50 /* CustomVStackView.swift */; };
+		94F6B32D2BDBF88300A3EE50 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6B32C2BDBF88300A3EE50 /* CustomButton.swift */; };
+		94F6B32F2BDC16B700A3EE50 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F6B32E2BDC16B700A3EE50 /* KeyChainService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9434CAC12BD97FF300C2E638 /* 21. დავალება - არქიტექტურული პატერნები.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "21. დავალება - არქიტექტურული პატერნები.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9434CAC12BD97FF300C2E638 /* 22. დავალება - Data Persistence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "22. დავალება - Data Persistence.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9434CAC42BD97FF300C2E638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9434CAC62BD97FF300C2E638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9434CAC82BD97FF300C2E638 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -39,7 +46,7 @@
 		9434CADA2BD9830600C2E638 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		9434CADC2BD9838B00C2E638 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 		9434CADF2BD99C0E00C2E638 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
-		9434CAE82BD9A8D600C2E638 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		9434CAE82BD9A8D600C2E638 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		9434CAEA2BD9A91500C2E638 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		9434CAEC2BD9A93400C2E638 /* LeftAlignedCustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCustomLabel.swift; sourceTree = "<group>"; };
 		9434CAEE2BD9A94F00C2E638 /* RightAlignedCustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightAlignedCustomLabel.swift; sourceTree = "<group>"; };
@@ -49,7 +56,14 @@
 		9434CAF62BD9DE5800C2E638 /* CountryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsView.swift; sourceTree = "<group>"; };
 		9434CAF82BD9F4F700C2E638 /* CountryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewModel.swift; sourceTree = "<group>"; };
 		9434CAFD2BDA7D0300C2E638 /* MainVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCExtensions.swift; sourceTree = "<group>"; };
-		9434CAFF2BDA7D7B00C2E638 /* CountryViewModelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModelExtensions.swift; sourceTree = "<group>"; };
+		9475AB1C2BDC921D007BA724 /* LoginVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCExtensions.swift; sourceTree = "<group>"; };
+		9475AB1E2BDC94FA007BA724 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		94F6B3242BDBE83200A3EE50 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		94F6B3262BDBE8BD00A3EE50 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		94F6B3282BDBEF7500A3EE50 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		94F6B32A2BDBF5DA00A3EE50 /* CustomVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVStackView.swift; sourceTree = "<group>"; };
+		94F6B32C2BDBF88300A3EE50 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		94F6B32E2BDC16B700A3EE50 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +88,7 @@
 		9434CAC22BD97FF300C2E638 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9434CAC12BD97FF300C2E638 /* 21. დავალება - არქიტექტურული პატერნები.app */,
+				9434CAC12BD97FF300C2E638 /* 22. დავალება - Data Persistence.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,12 +96,12 @@
 		9434CAC32BD97FF300C2E638 /* 21. დავალება - არქიტექტურული პატერნები */ = {
 			isa = PBXGroup;
 			children = (
+				9475AB212BDE9552007BA724 /* SuppportingFiles */,
 				9434CAD82BD982A300C2E638 /* App */,
 				9434CADE2BD99BF000C2E638 /* Services */,
 				9434CAE62BD9A88700C2E638 /* CustomViews */,
 				9434CAD92BD982F700C2E638 /* Model */,
 				94F6B3212BDB30BA00A3EE50 /* Scenes */,
-				9434CAFC2BDA78F700C2E638 /* LounchScreen */,
 				9434CAFA2BDA786F00C2E638 /* Resources */,
 			);
 			path = "21. დავალება - არქიტექტურული პატერნები";
@@ -114,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				9434CADF2BD99C0E00C2E638 /* CountryService.swift */,
+				94F6B32E2BDC16B700A3EE50 /* KeyChainService.swift */,
+				9475AB1E2BDC94FA007BA724 /* FileManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -122,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				9434CADC2BD9838B00C2E638 /* CountryViewModel.swift */,
-				9434CAFF2BDA7D7B00C2E638 /* CountryViewModelExtensions.swift */,
 			);
 			path = MainViewModel;
 			sourceTree = "<group>";
@@ -130,12 +145,15 @@
 		9434CAE62BD9A88700C2E638 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				9434CAE82BD9A8D600C2E638 /* CustomCell.swift */,
+				9434CAE82BD9A8D600C2E638 /* CustomTableViewCell.swift */,
 				9434CAEA2BD9A91500C2E638 /* CustomImageView.swift */,
 				9434CAEC2BD9A93400C2E638 /* LeftAlignedCustomLabel.swift */,
 				9434CAEE2BD9A94F00C2E638 /* RightAlignedCustomLabel.swift */,
 				9434CAF02BD9A96B00C2E638 /* CustomThinLine.swift */,
 				9434CAF22BD9A98600C2E638 /* CustomHStackView.swift */,
+				94F6B32A2BDBF5DA00A3EE50 /* CustomVStackView.swift */,
+				94F6B3282BDBEF7500A3EE50 /* CustomTextField.swift */,
+				94F6B32C2BDBF88300A3EE50 /* CustomButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -144,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				9434CACD2BD97FF500C2E638 /* Assets.xcassets */,
-				9434CAD22BD97FF500C2E638 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -155,6 +172,32 @@
 				9434CACF2BD97FF500C2E638 /* LaunchScreen.storyboard */,
 			);
 			path = LounchScreen;
+			sourceTree = "<group>";
+		};
+		9475AB212BDE9552007BA724 /* SuppportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9434CAD22BD97FF500C2E638 /* Info.plist */,
+				9434CAFC2BDA78F700C2E638 /* LounchScreen */,
+			);
+			path = SuppportingFiles;
+			sourceTree = "<group>";
+		};
+		9475AB222BDF21D1007BA724 /* LoginPageView */ = {
+			isa = PBXGroup;
+			children = (
+				94F6B3242BDBE83200A3EE50 /* LoginVC.swift */,
+				9475AB1C2BDC921D007BA724 /* LoginVCExtensions.swift */,
+			);
+			path = LoginPageView;
+			sourceTree = "<group>";
+		};
+		9475AB232BDF21E9007BA724 /* LoginPageViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				94F6B3262BDBE8BD00A3EE50 /* LoginViewModel.swift */,
+			);
+			path = LoginPageViewModel;
 			sourceTree = "<group>";
 		};
 		94969BF22BDA998B00980018 /* MainPage */ = {
@@ -204,18 +247,28 @@
 		94F6B3212BDB30BA00A3EE50 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				94F6B3232BDBE7ED00A3EE50 /* LoginPage */,
 				94969BF22BDA998B00980018 /* MainPage */,
 				94969BF32BDA999200980018 /* CountryDetailPage */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		94F6B3232BDBE7ED00A3EE50 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				9475AB222BDF21D1007BA724 /* LoginPageView */,
+				9475AB232BDF21E9007BA724 /* LoginPageViewModel */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9434CAC02BD97FF200C2E638 /* 21. დავალება - არქიტექტურული პატერნები */ = {
+		9434CAC02BD97FF200C2E638 /* 22. დავალება - Data Persistence */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9434CAD52BD97FF500C2E638 /* Build configuration list for PBXNativeTarget "21. დავალება - არქიტექტურული პატერნები" */;
+			buildConfigurationList = 9434CAD52BD97FF500C2E638 /* Build configuration list for PBXNativeTarget "22. დავალება - Data Persistence" */;
 			buildPhases = (
 				9434CABD2BD97FF200C2E638 /* Sources */,
 				9434CABE2BD97FF200C2E638 /* Frameworks */,
@@ -225,9 +278,9 @@
 			);
 			dependencies = (
 			);
-			name = "21. დავალება - არქიტექტურული პატერნები";
+			name = "22. დავალება - Data Persistence";
 			productName = "21. დავალება - არქიტექტურული პატერნები";
-			productReference = 9434CAC12BD97FF300C2E638 /* 21. დავალება - არქიტექტურული პატერნები.app */;
+			productReference = 9434CAC12BD97FF300C2E638 /* 22. დავალება - Data Persistence.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -245,7 +298,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9434CABC2BD97FF200C2E638 /* Build configuration list for PBXProject "21. დავალება - არქიტექტურული პატერნები" */;
+			buildConfigurationList = 9434CABC2BD97FF200C2E638 /* Build configuration list for PBXProject "22. დავალება - Data Persistence" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -258,7 +311,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9434CAC02BD97FF200C2E638 /* 21. დავალება - არქიტექტურული პატერნები */,
+				9434CAC02BD97FF200C2E638 /* 22. დავალება - Data Persistence */,
 			);
 		};
 /* End PBXProject section */
@@ -284,18 +337,25 @@
 				9434CAE02BD99C0E00C2E638 /* CountryService.swift in Sources */,
 				9434CAFE2BDA7D0300C2E638 /* MainVCExtensions.swift in Sources */,
 				9434CAEB2BD9A91500C2E638 /* CustomImageView.swift in Sources */,
+				94F6B3292BDBEF7500A3EE50 /* CustomTextField.swift in Sources */,
 				9434CADB2BD9830600C2E638 /* CountryModel.swift in Sources */,
 				9434CAED2BD9A93400C2E638 /* LeftAlignedCustomLabel.swift in Sources */,
+				94F6B32F2BDC16B700A3EE50 /* KeyChainService.swift in Sources */,
 				9434CAC92BD97FF300C2E638 /* MainVC.swift in Sources */,
 				9434CAF12BD9A96B00C2E638 /* CustomThinLine.swift in Sources */,
-				9434CB002BDA7D7B00C2E638 /* CountryViewModelExtensions.swift in Sources */,
+				9475AB1F2BDC94FA007BA724 /* FileManager.swift in Sources */,
 				9434CAC52BD97FF300C2E638 /* AppDelegate.swift in Sources */,
 				9434CAF32BD9A98600C2E638 /* CustomHStackView.swift in Sources */,
 				9434CAC72BD97FF300C2E638 /* SceneDelegate.swift in Sources */,
 				9434CAEF2BD9A94F00C2E638 /* RightAlignedCustomLabel.swift in Sources */,
-				9434CAE92BD9A8D600C2E638 /* CustomCell.swift in Sources */,
+				9434CAE92BD9A8D600C2E638 /* CustomTableViewCell.swift in Sources */,
+				94F6B3252BDBE83200A3EE50 /* LoginVC.swift in Sources */,
 				9434CAF52BD9AC6E00C2E638 /* CountryDetailsPage.swift in Sources */,
 				9434CAF92BD9F4F700C2E638 /* CountryDetailsViewModel.swift in Sources */,
+				94F6B32D2BDBF88300A3EE50 /* CustomButton.swift in Sources */,
+				9475AB1D2BDC921D007BA724 /* LoginVCExtensions.swift in Sources */,
+				94F6B3272BDBE8BD00A3EE50 /* LoginViewModel.swift in Sources */,
+				94F6B32B2BDBF5DA00A3EE50 /* CustomVStackView.swift in Sources */,
 				9434CADD2BD9838B00C2E638 /* CountryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,7 +502,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F9KH9L6Y7G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "21. დავალება - არქიტექტურული პატერნები/Resources/Info.plist";
+				INFOPLIST_FILE = "21. დავალება - არქიტექტურული პატერნები/SuppportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -474,7 +534,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F9KH9L6Y7G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "21. დავალება - არქიტექტურული პატერნები/Resources/Info.plist";
+				INFOPLIST_FILE = "21. დავალება - არქიტექტურული პატერნები/SuppportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -500,7 +560,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9434CABC2BD97FF200C2E638 /* Build configuration list for PBXProject "21. დავალება - არქიტექტურული პატერნები" */ = {
+		9434CABC2BD97FF200C2E638 /* Build configuration list for PBXProject "22. დავალება - Data Persistence" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9434CAD32BD97FF500C2E638 /* Debug */,
@@ -509,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9434CAD52BD97FF500C2E638 /* Build configuration list for PBXNativeTarget "21. დავალება - არქიტექტურული პატერნები" */ = {
+		9434CAD52BD97FF500C2E638 /* Build configuration list for PBXNativeTarget "22. დავალება - Data Persistence" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9434CAD62BD97FF500C2E638 /* Debug */,

@@ -23,7 +23,7 @@ class LeftAlignedCustomLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
         text = "Error"
         textAlignment = .left
-        font = UIFont.systemFont(ofSize: 14)
+        font = UIFont.systemFont(ofSize: 11)
         textColor = .label
         numberOfLines = 0
     }
