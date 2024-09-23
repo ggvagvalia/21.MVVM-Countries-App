@@ -6,11 +6,10 @@ This project is an iOS application built using UIKit, and MVVM architecture. It 
 <img width="250" alt="Screenshot 2024-09-23 at 6 22 49 PM" src="https://github.com/user-attachments/assets/99db7990-1185-414c-a551-8db54a697e44">
 <img width="250" alt="Screenshot 2024-09-23 at 6 22 35 PM" src="https://github.com/user-attachments/assets/0ddbc153-e05e-4029-af80-dccf74af8837">
 
-<img width="247" alt="Screenshot 2024-09-23 at 6 23 23 PM" src="https://github.com/user-attachments/assets/48f89a62-b6a0-4e69-873a-b6dca5c400e0">
-<img width="247" alt="Screenshot 2024-09-23 at 6 23 11 PM" src="https://github.com/user-attachments/assets/83575729-fca9-4455-b9c9-e3af10a06b85">
+<img width="247" alt="Screenshot 2024-09-23 at 6 23 23 PM" src="https://github.com/user-attachments/assets/48f89a62-b6a0-4e69-873a-b6dca5c400e0"> <img width="247" alt="Screenshot 2024-09-23 at 6 23 11 PM" src="https://github.com/user-attachments/assets/83575729-fca9-4455-b9c9-e3af10a06b85">
 
-<img width="300" alt="Screenshot 2024-09-23 at 6 23 59 PM" src="https://github.com/user-attachments/assets/83122f99-e2ea-43b0-b319-774713286679">
-<img width="300" alt="Screenshot 2024-09-23 at 6 23 42 PM" src="https://github.com/user-attachments/assets/ce7895b7-9a96-4fb9-b123-419c98febccd">
+<img width="280" alt="Screenshot 2024-09-23 at 6 23 59 PM" src="https://github.com/user-attachments/assets/83122f99-e2ea-43b0-b319-774713286679">
+<img width="280" alt="Screenshot 2024-09-23 at 6 23 42 PM" src="https://github.com/user-attachments/assets/ce7895b7-9a96-4fb9-b123-419c98febccd">
 
 
 
